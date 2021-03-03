@@ -1,5 +1,3 @@
-// Aufgabe 2
-// Loris Wilwert, Raphael Julien Ebner, Catherine Wampach
 
 #include "point.hh"
 #include "canvas.hh"
@@ -65,7 +63,7 @@ void julia (Point c, Canvas& canvas, double threshold, int maxIt, std::string fi
                 canvas(i, j) = 0;
             else 
                 if (smooth)
-                    /* ----- Aufgabe 3 ----- */
+                   
                     canvas(i, j) = std::log( it.numOfIt() - std::log2( std::log(it.norm()) / std::log(threshold) ) ) * 100;
                 else
                     canvas(i, j) = std::log( it.numOfIt() ) * 100;
