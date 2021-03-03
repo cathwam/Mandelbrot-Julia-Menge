@@ -1,5 +1,3 @@
-// Aufgabe 1
-// Loris Wilwert, Raphael Julien Ebner, Catherine Wampach
 
 #include "point.hh"
 #include "canvas.hh"
@@ -7,7 +5,6 @@
 #include <cmath>
 #include <string>
 
-/* ----- Punkt a) -----*/
 class IterationResult {
     private:
         Point _p;
@@ -42,7 +39,7 @@ class IterationResult {
 };
 
 
-/* ----- Punkt b) ----- */
+
 IterationResult iterate (Point z, Point c, double threshold, int maxIt) {
     IterationResult it(z);
 
@@ -57,7 +54,7 @@ IterationResult iterate (Point z, Point c, double threshold, int maxIt) {
 }
 
 
-/* ----- Punkt c) ----- */
+
 void mandelbrot(Canvas& canvas, double threshold, int maxIt, std::string filename, bool smooth = false) {
     int i, j;
     for (i = 0; i < canvas.horPixels(); ++i) {
@@ -67,7 +64,6 @@ void mandelbrot(Canvas& canvas, double threshold, int maxIt, std::string filenam
                 canvas(i, j) = 0;
             else 
                 if (smooth)
-                    /* ----- Aufgabe 3 ----- */
                     canvas(i, j) = std::log( it.numOfIt() - std::log2( std::log(it.norm()) / std::log(threshold) ) ) * 100;
                 else
                     canvas(i, j) = std::log( it.numOfIt() ) * 100;
